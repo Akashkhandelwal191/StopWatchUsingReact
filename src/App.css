@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: cursive;
 }
 
 .App-logo {
@@ -35,4 +36,115 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  /* background-color: black; */
+  background-color: #171010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.outerdiv
+{
+  border-radius: 60px 120px 60px 120px;
+  width: 100%;
+  
+  border: none;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TimerBox
+{ 
+  border:1px solid red;
+  height: 300px;
+  width: 80%;
+  min-width: 300px;
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+  border-radius: 60px 120px 60px 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: 1.5rem;
+
+}
+
+.TimerBox > div
+{
+    margin: 20px;
+}
+
+button{
+  cursor: pointer;
+  padding: 10px;
+  outline: hidden;
+  border: none;
+  border-radius: 5px;
+  color:white;
+  margin: 5px;
+}
+
+#SideLog{
+
+  height:540px;
+  width: 300px;
+  padding: 20px;
+  position: absolute;
+  right: 40px;
+  top:20px;
+  background-color: #000000;
+  color:white;
+  border:none;
+  border-radius: 10px;
+  display: none;
+  overflow-y: hidden;
+}
+
+
+li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  margin: 10px;
+
+}
+
+li span{
+   display: block;
+}
+
+i{
+cursor: pointer;
+}
+
+
+
+.ClearAllLogBtn{
+   padding: 5px;
+   height: 50px;
+   margin-top: 18px;
+}
+
+.statement{
+   display: flex;
+   justify-content: space-between;
+   font-size: 1rem;
+}
+
+.timelapses{
+  overflow-y: auto; 
+  height: 500px;
+  padding-bottom: 20px;
 }
