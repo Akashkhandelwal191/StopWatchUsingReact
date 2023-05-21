@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect,useState,useMemo} from "react";
 
 const Stopwatch = () => {
   const [Hour, SetHour] = useState("00");
@@ -90,13 +90,34 @@ const Stopwatch = () => {
       SetTimeStamps(CurrentState);
   }
 
-  const getRandomColor = ()=>{
-     
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
-    randomColor = "#" + randomColor;
 
-    return randomColor;
-  }
+  const color = useMemo(() => {
+    return TimeStamps.map((item, index) => (
+      <li
+        key={index}
+        style={{
+          backgroundColor:
+            "#" + Math.floor(Math.random() * 16777215).toString(16),
+        }}
+      >
+        <span>{item}</span>
+        <span>
+          <i
+            className="fa-solid fa-square-xmark"
+            onClick={() => deletetime(index)}
+          ></i>
+        </span>
+      </li>
+    ));
+  }, [TimeStamps]);
+
+  // const getRandomColor = ()=>{
+     
+  //   let randomColor = Math.floor(Math.random()*16777215).toString(16);
+  //   randomColor = "#" + randomColor;
+
+  //   return randomColor;
+  // }
 
 
 
@@ -135,9 +156,7 @@ const Stopwatch = () => {
           <hr />
           <div className="timelapses">
             <ul>
-              {TimeStamps.map((item, index) => (
-                <li key={index} style={{backgroundColor: getRandomColor()}}><span>{item}</span><span><i className="fa-solid fa-square-xmark" onClick={()=> deletetime(index)}></i></span></li>
-              ))}
+             {color}
             </ul>
           </div>
         </div>
